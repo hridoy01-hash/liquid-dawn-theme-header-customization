@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+        }
+
+        .menu-icon_component {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu-icon_component">
+        <div id="lottie" class="lottie-animation"></div>
+    </div>
+
+    <!-- Lottie Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+
+    <script>
+        // Load the Lottie animation
+        const animation = lottie.loadAnimation({
+            container: document.getElementById('lottie'),
+            renderer: 'svg',
+            loop: false, // No loop
+            autoplay: false, // Start in paused state
+            path: 'https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/662859f7a5977304bfa9da01_JjSmqmXeoa.json' // Path to JSON
+        });
+
+        // Track menu state
+        let isMenuOpen = false;
+
+        // Set initial frame when the animation is loaded
+        animation.addEventListener('DOMLoaded', () => {
+            animation.goToAndStop(0, true); // Start with the hamburger icon
+        });
+
+        // Toggle animation on click
+        document.querySelector('.menu-icon_component').addEventListener('click', () => {
+            if (!isMenuOpen) {
+                // Play forward to cross icon
+                animation.playSegments([0, animation.totalFrames], true);
+            } else {
+                // Play backward to hamburger icon
+                animation.playSegments([animation.totalFrames, 0], true);
+            }
+            isMenuOpen = !isMenuOpen; // Toggle menu state
+        });
+    </script>
+</body>
+
+</html>
