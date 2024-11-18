@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Outfit", sans-serif;
+      }
+      .footer-component {
+        padding-top: 2rem;
+      }
+      .padding-global {
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+      }
+      .container-large {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+      .container-large {
+        width: 100%;
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .div-block-16 {
+        background-color: #0f0f0e;
+        border-radius: 2em;
+        padding: 2rem;
+      }
+      .w-layout-grid {
+        grid-row-gap: 16px;
+        grid-column-gap: 16px;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: 1fr;
+        display: grid;
+      }
+      .footer-details {
+        grid-column-gap: 2rem;
+        grid-row-gap: 2rem;
+        color: #8f8f8f;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 272px;
+        display: flex;
+      }
+      #w-node-_5412650f-b789-6ab1-c98c-925387c92604-87c925ff {
+        grid-area: span 1 / span 1 / span 1 / span 1;
+        justify-self: start;
+      }
+      .footer-links-grid-small {
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: 1fr;
+        justify-content: space-between;
+        align-items: flex-start;
+        display: grid;
+      }
+      .footer-details-wrap {
+        grid-column-gap: 0.5rem;
+        grid-row-gap: 0.5rem;
+        flex-direction: column;
+        display: flex;
+      }
+      .footer-logo {
+        background-color: #000;
+        background-image: none;
+        border-radius: 1em;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+      }
+      .w-inline-block {
+        max-width: 100%;
+        display: inline-block;
+      }
+      .footer-links-column {
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        font-weight: 300;
+        display: flex;
+      }
+      .footer-link {
+        grid-column-gap: 12px;
+        grid-row-gap: 12px;
+        color: #8f8f8f;
+        align-items: center;
+        font-size: 14px;
+        line-height: 24px;
+        text-decoration: none;
+        transition: color 0.2s;
+        display: flex;
+      }
+      .label-regular {
+        color: #fff;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.7;
+      }
+      .footer-legal-wrap {
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        background-color: var(--black);
+        color: #666;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.25rem 1.5rem;
+        display: flex;
+      }
+      .footer-legal-links-small {
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        align-items: center;
+        display: flex;
+      }
+      .footer-legal-link-dark {
+        color: #c9c9c9;
+        font-size: 12px;
+        line-height: 20px;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-grid {
+        grid-column-gap: 64px;
+        grid-row-gap: 64px;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1.5fr;
+      }
+      .footer-logo {
+        background-color: #000;
+        background-image: none;
+        border-radius: 1em;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+      }
+      .footer-category {
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        flex-direction: column;
+        flex: 1;
+        display: flex;
+      }
+      .icon-large {
+        flex: none;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        transition: color 0.2s;
+        display: flex;
+      }
+      .paragraph {
+        margin-bottom: 0;
+        font-size: 0.875rem;
+        font-weight: 300;
+        line-height: 1.4;
+        color: #8f8f8f;
+      }
+      .footer-logo-image {
+        width: 50%;
+        margin-left: -2px;
+      }
+      @media screen and (max-width: 767px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media screen and (max-width: 991px) {
+        .footer-grid {
+          grid-column-gap: 40px;
+          grid-row-gap: 40px;
+          /* grid-template-columns: 1fr 1.5fr; */
+        }
+      }
+      @media screen and (max-width: 479px) {
+        .footer-links-grid-small {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media screen and (max-width: 991px) {
+        .footer-links-grid-small {
+          grid-auto-columns: 1fr;
+        }
+      }
+      @media screen and (max-width: 479px) {
+        .footer-legal-wrap {
+          flex-flow: column;
+          align-items: center;
+        }
+      }
+      @media screen and (max-width: 991px) {
+        .footer-legal-wrap {
+          grid-column-gap: 24px;
+          grid-row-gap: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer class="footer-component">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="div-block-16">
+            <div class="w-layout-grid footer-grid">
+              <div
+                id="w-node-_5412650f-b789-6ab1-c98c-925387c92604-87c925ff"
+                class="footer-details"
+              >
+                <a href="#" class="footer-logo w-inline-block"
+                  ><img
+                    src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6622bc6d1eabd6e9a1a521bc_Path%20244.svg"
+                    loading="lazy"
+                    width="122"
+                    alt="Hyperion Logo"
+                    class="footer-logo-image"
+                /></a>
+                <div class="footer-details-wrap">
+                  <div class="footer-social-media-links">
+                    <a
+                      href="https://x.com/Hyperion_agency"
+                      class="footer-social-link w-inline-block"
+                      ><div class="icon-large w-embed">
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M24.5104 10.7134C23.8743 10.9948 23.1996 11.1796 22.5088 11.2618C23.2366 10.8261 23.7812 10.1407 24.0411 9.33337C23.3573 9.73967 22.6088 10.0256 21.8282 10.1788C21.1693 9.47588 20.2483 9.07752 19.2848 9.07862C17.3605 9.07862 15.7998 10.6388 15.7998 12.564C15.7998 12.8371 15.8311 13.102 15.8897 13.3576C12.9921 13.2117 10.4251 11.825 8.70565 9.71617C8.39608 10.2481 8.23338 10.8526 8.2342 11.4681C8.2342 12.6772 8.84967 13.7444 9.78458 14.3692C9.23115 14.3517 8.6899 14.2022 8.20599 13.9331C8.20545 13.9477 8.20545 13.9624 8.20545 13.9762C8.20545 15.6653 9.40683 17.0743 11.0017 17.3942C10.7023 17.4752 10.3936 17.5162 10.0835 17.5159C9.85831 17.5159 9.63976 17.4952 9.42733 17.4544C9.8711 18.8387 11.1574 19.8466 12.683 19.8742C11.4484 20.8432 9.92391 21.3688 8.35453 21.3666C8.07677 21.3668 7.79925 21.3504 7.52344 21.3176C9.1167 22.3418 10.9713 22.8854 12.8654 22.8834C19.2763 22.8834 22.7817 17.5729 22.7817 12.9676C22.7817 12.8169 22.778 12.6657 22.7713 12.5166C23.4536 12.0237 24.0425 11.4131 24.5104 10.7134Z"
+                            fill="#fff"
+                          ></path>
+                        </svg></div></a
+                    ><a
+                      href="https://www.instagram.com/hyperionagency.nl"
+                      class="footer-social-link w-inline-block"
+                      ><div class="icon-large w-embed">
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16.8572 7.66748C17.7951 7.66903 18.2703 7.67399 18.681 7.68621L18.8427 7.69151C19.0296 7.69815 19.2139 7.70648 19.4362 7.7169C20.3229 7.75786 20.9278 7.89815 21.4591 8.1044C22.0083 8.3162 22.4722 8.60231 22.9354 9.06551C23.3979 9.5287 23.6841 9.99398 23.8966 10.5419C24.1021 11.0724 24.2424 11.678 24.2841 12.5648C24.294 12.787 24.302 12.9714 24.3086 13.1582L24.3138 13.32C24.326 13.7306 24.3316 14.2059 24.3333 15.1437L24.334 15.7652C24.3341 15.8411 24.3341 15.9194 24.3341 16.0002L24.334 16.2353L24.3335 16.8567C24.3319 17.7946 24.327 18.2698 24.3147 18.6805L24.3094 18.8422C24.3028 19.0291 24.2945 19.2134 24.2841 19.4357C24.2431 20.3224 24.1021 20.9273 23.8966 21.4586C23.6847 22.0078 23.3979 22.4717 22.9354 22.9349C22.4722 23.3974 22.0062 23.6836 21.4591 23.8961C20.9278 24.1016 20.3229 24.2419 19.4362 24.2836C19.2139 24.2935 19.0296 24.3015 18.8427 24.3081L18.681 24.3133C18.2703 24.3255 17.7951 24.3311 16.8572 24.3328L16.2358 24.3335C16.1599 24.3336 16.0816 24.3336 16.0007 24.3336L15.7657 24.3335L15.1442 24.333C14.2064 24.3314 13.7311 24.3265 13.3205 24.3142L13.1587 24.3089C12.9719 24.3023 12.7875 24.294 12.5653 24.2836C11.6785 24.2426 11.0743 24.1016 10.5424 23.8961C9.99377 23.6842 9.52919 23.3974 9.06599 22.9349C8.6028 22.4717 8.31739 22.0057 8.10489 21.4586C7.89864 20.9273 7.75905 20.3224 7.71739 19.4357C7.70749 19.2134 7.69941 19.0291 7.69287 18.8422L7.68763 18.6805C7.67544 18.2698 7.66988 17.7946 7.66808 16.8567L7.66797 15.1437C7.66952 14.2059 7.67448 13.7306 7.6867 13.32L7.69199 13.1582C7.69864 12.9714 7.70697 12.787 7.71739 12.5648C7.75835 11.6773 7.89864 11.0731 8.10489 10.5419C8.31669 9.99328 8.6028 9.5287 9.06599 9.06551C9.52919 8.60231 9.99447 8.3169 10.5424 8.1044C11.0736 7.89815 11.6778 7.75856 12.5653 7.7169C12.7875 7.707 12.9719 7.69892 13.1587 7.69238L13.3205 7.68714C13.7311 7.67495 14.2064 7.66939 15.1442 7.66759L16.8572 7.66748ZM16.0007 11.8336C13.6983 11.8336 11.8341 13.6998 11.8341 16.0002C11.8341 18.3027 13.7003 20.1669 16.0007 20.1669C18.3032 20.1669 20.1674 18.3006 20.1674 16.0002C20.1674 13.6978 18.3011 11.8336 16.0007 11.8336ZM16.0007 13.5002C17.3815 13.5002 18.5007 14.6191 18.5007 16.0002C18.5007 17.381 17.3818 18.5002 16.0007 18.5002C14.62 18.5002 13.5007 17.3813 13.5007 16.0002C13.5007 14.6195 14.6196 13.5002 16.0007 13.5002ZM20.3757 10.5836C19.8013 10.5836 19.3341 11.0501 19.3341 11.6245C19.3341 12.1989 19.8007 12.6662 20.3757 12.6662C20.9501 12.6662 21.4174 12.1996 21.4174 11.6245C21.4174 11.0501 20.9493 10.5828 20.3757 10.5836Z"
+                            fill="#fff"
+                          ></path>
+                        </svg></div
+                    ></a>
+                  </div>
+                  <p class="paragraph">Follow us for more!</p>
+                </div>
+              </div>
+              <div class="footer-links-grid-small">
+                <div class="footer-category">
+                  <div class="label-regular text-white">Explore</div>
+                  <div class="footer-links-column">
+                    <a href="/about-us" class="footer-link w-inline-block"
+                      ><div>About us</div></a
+                    ><a
+                      href="https://hyperion-agency.webflow.io/#case-studies"
+                      class="footer-link w-inline-block"
+                      ><div>Case studies</div></a
+                    ><a href="/partnerships" class="footer-link w-inline-block"
+                      ><div>Partnerships</div></a
+                    ><a href="#" class="footer-link hide w-inline-block"
+                      ><div>Lorem Ipsum</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="footer-category">
+                  <div class="label-regular text-white">Solutions</div>
+                  <div class="footer-links-column">
+                    <a
+                      href="/services/google-merchant-center"
+                      class="footer-link w-inline-block"
+                      ><div>Google Merchant Center</div></a
+                    ><a
+                      href="/services/google-ads"
+                      class="footer-link w-inline-block"
+                      ><div>Google Ads</div></a
+                    ><a href="/services/seo" class="footer-link w-inline-block"
+                      ><div>SEO</div></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-legal-wrap">
+            <div class="footer-legal-links-small">
+              <a href="/privacy-policy" class="footer-legal-link-dark"
+                >Privacy Policy</a
+              ><a href="/terms-and-conditions" class="footer-legal-link-dark"
+                >Terms of Service</a
+              ><a href="/contact" class="footer-legal-link-dark">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
