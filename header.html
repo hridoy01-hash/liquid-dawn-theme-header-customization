@@ -211,6 +211,68 @@
       transform: rotate(180deg);
     }
 
+    /* hamburger menu style */
+
+    .hamburger_menu label {
+      display: flex;
+      flex-direction: column;
+      width: 30px;
+      cursor: pointer;
+    }
+
+    .hamburger_menu label span {
+      background: #ffffff;
+      border-radius: 10px;
+      height: 4px;
+      margin: 3px 0;
+      transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    }
+
+
+    .hamburger_menu span:nth-of-type(1) {
+      width: 50%;
+
+    }
+
+    .hamburger_menu span:nth-of-type(2) {
+      width: 100%;
+    }
+
+
+    .hamburger_menu span:nth-of-type(3) {
+      width: 75%;
+
+    }
+
+
+    .hamburger_menu input[type="checkbox"] {
+      display: none;
+    }
+
+
+    .hamburger_menu input[type="checkbox"]:checked~span:nth-of-type(1) {
+      transform-origin: bottom;
+      transform: rotatez(45deg) translate(5px, 2px)
+    }
+
+
+    .hamburger_menu input[type="checkbox"]:checked~span:nth-of-type(2) {
+
+      transform-origin: top;
+      transform: rotatez(-45deg)
+    }
+
+
+    .hamburger_menu input[type="checkbox"]:checked~span:nth-of-type(3) {
+      transform-origin: bottom;
+      width: 50%;
+      transform: translate(12px, -5px) rotatez(45deg);
+
+    }
+
+    /* end hamburger style */
+
     @media (min-width: 480px) {
       .navbar_inner_content {
         padding: 16px 16px;
@@ -332,7 +394,8 @@
         align-items: center;
         justify-content: center;
       }
-      .mobile_menu_drawer{
+
+      .mobile_menu_drawer {
         display: none;
       }
     }
@@ -371,8 +434,13 @@
             </li>
           </ul>
         </div>
-        <div class="hamburger_menu" id="menu_hamburger">
-          <span style="color: #bbb6ae">menu</span>
+        <div class="hamburger_menu">
+          <label for="check" id="menu_hamburger">
+            <input type="checkbox" id="check" />
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
         </div>
         <div class="navbar_button-wrapper">
           <a href="#" class="button w-button">Book a call</a>
@@ -640,12 +708,19 @@
       });
 
       // hamburger
-      const menu_hamburger = document.getElementById("menu_hamburger");
-      const mobile_menu_drawer = document.querySelector(
-        ".mobile_menu_drawer"
+      /* const menu_hamburger = document.getElementById("menu_hamburger");
+      const mobile_menu_drawer = document.querySelector(".mobile_menu_drawer"
       );
       menu_hamburger.addEventListener("click", function () {
         mobile_menu_drawer.classList.toggle("open_mobile_menu_drawer");
+      }); */
+      // Get the checkbox and mobile menu drawer
+      const menuCheckbox = document.getElementById("check");
+      const mobile_menu_drawer = document.querySelector(".mobile_menu_drawer");
+
+      // Toggle mobile menu drawer on checkbox change
+      menuCheckbox.addEventListener("change", function () {
+        mobile_menu_drawer.classList.toggle("open_mobile_menu_drawer", this.checked);
       });
 
       // mobile sub menu open
