@@ -1,138 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Header</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Outfit", sans-serif;
-      }
-      .navbar_container {
-        max-width: 1400px;
-        padding: 0px 20px;
-        margin: 0 auto;
-      }
-      .header_section {
-        background: #000;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-      }
-      .navbar_logo {
-        width: 100%;
-        display: block;
-        height: 100%;
-        object-fit: cover;
-      }
-      .navbar_inner_content {
-        padding: 10px 16px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .navbar_inner_content .logo {
-        width: 60px;
-      }
-      .hamburger_menu {
-        height: 48px;
-        width: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #ffffff4d;
-        border-radius: 8px;
-      }
-      .content {
-        padding-top: 150px;
-      }
-      .mobile_menu_drawer {
-        width: 100%;
-        max-height: 2000px;
-        background-color: #000;
-        padding: 24px 16px 32px;
-        border-top: 1px solid #fff3;
-        position: absolute;
-        left: 0;
-        top: 0;
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.2s linear;
-        z-index: -999;
-      }
-      .mobile_menu_drawer.open_mobile_menu_drawer {
-        top: 100%;
-        visibility: visible;
-        opacity: 1;
-      }
-      ul.nav_lists {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-      a.mobile_nav_link {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-        line-height: 1;
-        padding: 24px 0px;
-        display: block;
-      }
-      /* .mobile_nav_link_content {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Header</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Outfit", sans-serif;
+    }
+
+    .navbar_container {
+      max-width: 1400px;
+      padding: 0px 20px;
+      margin: 0 auto;
+    }
+
+    .header_section {
+      background: #000;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .navbar_logo {
+      width: 100%;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .navbar_inner_content {
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar_inner_content .logo {
+      width: 60px;
+    }
+
+    .hamburger_menu {
+      height: 48px;
+      width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ffffff4d;
+      border-radius: 8px;
+    }
+
+    .content {
+      padding-top: 150px;
+      min-height: 1400px;
+    }
+
+    .mobile_menu_drawer {
+      width: 100%;
+      max-height: 2000px;
+      background-color: #000;
+      padding: 24px 16px 32px;
+      border-top: 1px solid #fff3;
+      position: absolute;
+      left: 0;
+      top: 0;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s linear;
+      z-index: -999;
+    }
+
+    .mobile_menu_drawer.open_mobile_menu_drawer {
+      top: 100%;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    ul.nav_lists {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    a.mobile_nav_link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 1;
+      padding: 24px 0px;
+      display: block;
+    }
+
+    /* .mobile_nav_link_content {
         padding: 24px 0px;
       } */
-      .list_item_content {
-        display: flex;
+    .list_item_content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .svg {
+      display: flex;
+    }
+
+    .has_menu_link_content {
+      display: flex;
+      gap: 16px;
+      padding: 12px 0px;
+    }
+
+    .has_menu_link_wrapper {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 0.2s linear;
+      padding-left: 16px;
+    }
+
+    .has_menu_link_item li {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .header_section a {
+      text-decoration: none;
+    }
+
+    .has_menu_link_item span {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1;
+      color: #bbb6ae;
+    }
+
+    .has_menu_link_item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .book_btn {
+      border: 0.5px solid #dfc488;
+      background-color: #dfc488;
+      color: #000;
+      text-align: center;
+      border-radius: 100px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.2s ease-in;
+      box-shadow: 0 0 16px #ffedaf1a;
+      width: 100%;
+      display: block;
+      margin-top: 8px;
+    }
+
+    .has_children_menu_content {
+      max-height: 0;
+      visibility: hidden;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.4s linear;
+    }
+
+    .has_children_menu_content.open_has_children_content {
+      max-height: 500px;
+      visibility: visible;
+      opacity: 1;
+      overflow: auto;
+    }
+
+    .has_menu_inner_content_wrapper {
+      visibility: hidden;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.5s linear;
+    }
+
+    .has_children_menu_content.open_has_children_content .has_menu_inner_content_wrapper {
+      visibility: visible;
+      opacity: 1;
+      overflow: auto;
+    }
+
+    /* Default state */
+    .has_children_icon svg {
+      transition: transform 0.4s ease;
+    }
+
+    /* Rotated state */
+    .has_children_icon svg.rotate {
+      transform: rotate(180deg);
+    }
+
+    @media (min-width: 480px) {
+      .navbar_inner_content {
+        padding: 16px 16px;
+      }
+
+      .navbar_inner_content .logo {
+        width: 70px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .navbar_inner_content {
+        padding: 16px 32px;
+      }
+
+      .navbar_inner_content .logo {
+        width: 75px;
+      }
+    }
+
+    /* display none for mobile device */
+    .navbar_button-wrapper {
+      display: none;
+    }
+
+    .desk_menu_items {
+      display: none;
+      list-style: none;
+    }
+
+    @media (min-width: 992px) {
+      .navbar_inner_content {
+        padding: 16px 32px;
+      }
+
+      .navbar_inner_content .logo {
+        width: 75px;
+      }
+
+      .hamburger_menu {
+        display: none;
+      }
+
+      .navbar_button-wrapper {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: 1fr;
+        justify-content: flex-end;
         align-items: center;
-        justify-content: space-between;
-      }
-      .svg {
+        width: 8rem;
         display: flex;
       }
-      .has_menu_link_content {
-        display: flex;
-        gap: 16px;
-        padding: 12px 0px;
-      }
-      .has_menu_link_wrapper {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        transition: all 0.2s linear;
-        padding-left: 16px;
-      }
-      .has_menu_link_item li {
-        font-size: 16px;
-        color: #fff;
-        font-weight: 500;
-      }
-      .header_section a {
-        text-decoration: none;
-      }
-      .has_menu_link_item span {
-        font-size: 12px;
-        font-weight: 300;
-        line-height: 1;
-        color: #bbb6ae;
-      }
-      .has_menu_link_item {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
-      .book_btn {
+
+      .navbar_button-wrapper .button {
         border: 0.5px solid #dfc488;
         background-color: #dfc488;
         color: #000;
@@ -140,533 +272,395 @@
         border-radius: 100px;
         padding: 0.75rem 1.5rem;
         font-weight: 500;
-        font-size: 18px;
         text-decoration: none;
         transition: all 0.2s ease-in;
         box-shadow: 0 0 16px #ffedaf1a;
+        display: inline-block;
+        line-height: inherit;
+        font-size: 14px;
+      }
+
+      .navbar_inner_content {
+        backdrop-filter: blur(11px);
+        background-color: #00000075;
+        border-radius: 100px;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        display: block;
-        margin-top: 8px;
-      }
-      .has_children_menu_content {
-        max-height: 0;
-        visibility: hidden;
-        opacity: 0;
-        overflow: hidden;
-        transition: all 0.4s linear;
-      }
-      .has_children_menu_content.open_has_children_content {
-        max-height: 500px;
-        visibility: visible;
-        opacity: 1;
-        overflow: auto;
-      }
-      .has_menu_inner_content_wrapper {
-        visibility: hidden;
-        opacity: 0;
-        overflow: hidden;
-        transition: all 0.5s linear;
-      }
-      .has_children_menu_content.open_has_children_content
-        .has_menu_inner_content_wrapper {
-        visibility: visible;
-        opacity: 1;
-        overflow: auto;
-      }
-      /* Default state */
-      .has_children_icon svg {
-        transition: transform 0.4s ease;
+        max-width: 60rem;
+        height: 100%;
+        min-height: 4.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        padding: 5px 32px;
       }
 
-      /* Rotated state */
-      .has_children_icon svg.rotate {
-        transform: rotate(180deg);
+      .header_section {
+        padding: 16px 32px;
+        background-color: #00000057;
+        background-color: transparent;
       }
 
-      @media (min-width: 480px) {
-        .navbar_inner_content {
-          padding: 16px 16px;
-        }
-        .navbar_inner_content .logo {
-          width: 70px;
-        }
-      }
-      @media (min-width: 768px) {
-        .navbar_inner_content {
-          padding: 16px 32px;
-        }
-        .navbar_inner_content .logo {
-          width: 75px;
-        }
-      }
-      /* display none for mobile device */
-      .navbar_button-wrapper {
-        display: none;
-      }
       .desk_menu_items {
-        display: none;
+        display: flex;
         list-style: none;
       }
-      @media (min-width: 992px) {
-        .navbar_inner_content {
-          padding: 16px 32px;
-        }
-        .navbar_inner_content .logo {
-          width: 75px;
-        }
-        .hamburger_menu {
-          display: none;
-        }
-        .navbar_button-wrapper {
-          grid-template-rows: auto;
-          grid-template-columns: 1fr 1fr;
-          grid-auto-columns: 1fr;
-          justify-content: flex-end;
-          align-items: center;
-          width: 8rem;
-          display: flex;
-        }
-        .navbar_button-wrapper .button {
-          border: 0.5px solid #dfc488;
-          background-color: #dfc488;
-          color: #000;
-          text-align: center;
-          border-radius: 100px;
-          padding: 0.75rem 1.5rem;
-          font-weight: 500;
-          text-decoration: none;
-          transition: all 0.2s ease-in;
-          box-shadow: 0 0 16px #ffedaf1a;
-          display: inline-block;
-          line-height: inherit;
-          font-size: 14px;
-        }
-        .navbar_inner_content {
-          backdrop-filter: blur(15px);
-          background-color: #ffffff1a;
-          border-radius: 100px;
-          flex-flow: row;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-          max-width: 60rem;
-          height: 100%;
-          min-height: 4.5rem;
-          margin-left: auto;
-          margin-right: auto;
-          display: flex;
-          padding: 5px 32px;
-        }
-        .header_section {
-          padding: 16px 32px;
-        }
-        .desk_menu_items {
-          display: flex;
-          list-style: none;
-        }
-        .desk_menu_item a {
-          color: #fff;
-          font-size: 15px;
-          border-radius: 100px;
-          justify-content: center;
-          align-items: center;
-          padding: 0.75rem 1rem;
-          font-size: 0.875rem;
-          line-height: 1;
-          transition: all 0.3s linear;
-          display: flex;
-          gap: 5px;
-        }
-        .desk_menu_item a:hover {
-          background-color: #ffffff0d;
-          outline: 0;
-        }
-        .desk_menu_item {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+
+      .desk_menu_item a {
+        color: #fff;
+        font-size: 15px;
+        border-radius: 100px;
+        justify-content: center;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        line-height: 1;
+        transition: all 0.3s linear;
+        display: flex;
+        gap: 5px;
       }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="header_section">
-        <div class="navbar_inner_content">
-          <div class="logo">
-            <img class="navbar_logo" src="./logo.png" alt="" />
-          </div>
-          <div class="desk_nav_menu">
-            <ul class="desk_menu_items">
-              <li>
-                <div class="desk_menu_item">
-                  <a href="#"
-                    >Sevices
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 7.5L10 12.5L15 7.5"
-                        stroke="#fff"
-                        stroke-width="1.67"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path></svg
-                  ></a>
-                </div>
-              </li>
-              <li>
-                <div class="desk_menu_item">
-                  <a href="#">Case Studies</a>
-                  <span href="#"></span>
-                </div>
-              </li>
-              <li>
-                <div class="desk_menu_item">
-                  <a href="#">About Us</a>
-                  <span href="#"></span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="hamburger_menu" id="menu_hamburger">
-            <span style="color: #bbb6ae">menu</span>
-          </div>
-          <div class="navbar_button-wrapper">
-            <a href="#" class="button w-button">Book a call</a>
-          </div>
+
+      .desk_menu_item a:hover {
+        background-color: #ffffff0d;
+        outline: 0;
+      }
+
+      .desk_menu_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header_section">
+      <div class="navbar_inner_content">
+        <div class="logo">
+          <img class="navbar_logo" src="./logo.png" alt="" />
         </div>
-        <div class="mobile_menu_drawer">
-          <div class="mobile_nav_list_wrapper">
-            <ul class="nav_lists">
-              <div class="mobile_nav_link_content">
-                <a class="mobile_nav_link" href="#">
-                  <div class="list_item_content">
-                    <li class="mobile_nav_list_item">Services</li>
-                    <span class="has_children_icon">
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 7.5L10 12.5L15 7.5"
-                          stroke="currentColor"
-                          stroke-width="1.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></path>
-                      </svg>
-                    </span>
-                  </div>
-                </a>
-                <div class="has_children_menu_content">
-                  <ul class="has_menu_link_wrapper">
-                    <div class="has_menu_inner_content_wrapper">
-                      <a href="#">
-                        <div class="has_menu_link_content">
-                          <div class="inner_link_icon">
-                            <span
-                              ><img
-                                style="width: 20px; height: 20px"
-                                src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
-                                alt=""
-                            /></span>
-                          </div>
-                          <div class="has_menu_link_item">
-                            <li>Google Marcent Center</li>
-                            <span>link sub text</span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="has_menu_inner_content_wrapper">
-                      <a href="#">
-                        <div class="has_menu_link_content">
-                          <div class="inner_link_icon">
-                            <span
-                              ><img
-                                style="width: 20px; height: 20px"
-                                src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
-                                alt=""
-                            /></span>
-                          </div>
-                          <div class="has_menu_link_item">
-                            <li>Google Marcent Center</li>
-                            <span>link sub text</span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="has_menu_inner_content_wrapper">
-                      <a href="#">
-                        <div class="has_menu_link_content">
-                          <div class="inner_link_icon">
-                            <span
-                              ><img
-                                style="width: 20px; height: 20px"
-                                src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
-                                alt=""
-                            /></span>
-                          </div>
-                          <div class="has_menu_link_item">
-                            <li>Google Marcent Center</li>
-                            <span>link sub text</span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </ul>
-                </div>
+        <div class="desk_nav_menu">
+          <ul class="desk_menu_items">
+            <li>
+              <div class="desk_menu_item">
+                <a href="#">Sevices
+                  <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 7.5L10 12.5L15 7.5" stroke="#fff" stroke-width="1.67" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
               </div>
-              <div class="mobile_nav_link_content">
-                <a class="mobile_nav_link" href="#">
-                  <div class="list_item_content">
-                    <li class="mobile_nav_list_item">Services</li>
-                    <span class="has_children_icon">
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 7.5L10 12.5L15 7.5"
-                          stroke="currentColor"
-                          stroke-width="1.67"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></path>
-                      </svg>
-                    </span>
-                  </div>
-                </a>
-                <div class="has_children_menu_content">
-                  <ul class="has_menu_link_wrapper">
-                    <div class="has_menu_inner_content_wrapper">
-                      <a href="#">
-                        <div class="has_menu_link_content">
-                          <div class="inner_link_icon">
-                            <span
-                              ><img
-                                style="width: 20px; height: 20px"
-                                src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
-                                alt=""
-                            /></span>
-                          </div>
-                          <div class="has_menu_link_item">
-                            <li>Google Marcent Center</li>
-                            <span>link sub text</span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="has_menu_inner_content_wrapper">
-                      <a href="#">
-                        <div class="has_menu_link_content">
-                          <div class="inner_link_icon">
-                            <span
-                              ><img
-                                style="width: 20px; height: 20px"
-                                src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
-                                alt=""
-                            /></span>
-                          </div>
-                          <div class="has_menu_link_item">
-                            <li>Google Marcent Center</li>
-                            <span>link sub text</span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="has_menu_inner_content_wrapper">
-                      <a href="#">
-                        <div class="has_menu_link_content">
-                          <div class="inner_link_icon">
-                            <span
-                              ><img
-                                style="width: 20px; height: 20px"
-                                src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
-                                alt=""
-                            /></span>
-                          </div>
-                          <div class="has_menu_link_item">
-                            <li>Google Marcent Center</li>
-                            <span>link sub text</span>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </ul>
-                </div>
+            </li>
+            <li>
+              <div class="desk_menu_item">
+                <a href="#">Case studies</a>
+                <span href="#"></span>
               </div>
-            </ul>
-          </div>
-          <a class="book_btn" href="">Book a call</a>
+            </li>
+            <li>
+              <div class="desk_menu_item">
+                <a href="#">About us</a>
+                <span href="#"></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="hamburger_menu" id="menu_hamburger">
+          <span style="color: #bbb6ae">menu</span>
+        </div>
+        <div class="navbar_button-wrapper">
+          <a href="#" class="button w-button">Book a call</a>
         </div>
       </div>
-    </header>
-    <main>
-      <div class="content">
-        <span
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum labore
-          quod dolore. Quis molestias natus nihil temporibus, error quasi ea
-          consectetur. Optio excepturi odit sequi veniam provident nisi ea
-          minima! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Accusantium fugit, provident saepe voluptas ex repellendus
-          voluptatibus doloribus ipsum quas quo aliquid dicta animi a
-          necessitatibus quis possimus inventore placeat id perferendis dolor
-          nesciunt quidem pariatur impedit eaque. Expedita, minus fugiat,
-          nesciunt id consequuntur vitae beatae autem fugit quos magnam sunt? Ad
-          officia necessitatibus velit autem hic! In, beatae laborum? Culpa
-          molestiae quisquam ducimus, a voluptatibus odio voluptas eos maiores
-          perspiciatis dolore incidunt earum ex omnis error, fuga assumenda
-          porro nisi quam consequatur impedit velit numquam. Excepturi quae
-          sequi, accusamus at quia reiciendis officiis animi harum non ut, sunt
-          ea fuga dolorem blanditiis error maxime? Natus asperiores corporis est
-          aliquam distinctio a recusandae quibusdam mollitia ea. Provident error
-          eveniet ad porro. Aliquam incidunt magnam numquam nisi omnis tenetur
-          fugit eius repellat nemo dolorum amet dolorem, eaque at reprehenderit
-          cumque minima ducimus ut dolores soluta doloremque dolor error hic
-          sunt doloribus. Ex qui reprehenderit illo, tempore at facere quaerat
-          placeat ducimus facilis ut dolore minus itaque optio harum quasi dicta
-          consequatur ea asperiores tempora eveniet similique aliquid. Corporis
-          ipsam odio nostrum, obcaecati facilis aperiam consequuntur dicta, quae
-          temporibus modi assumenda aliquam eligendi dolores excepturi nobis
-          ipsum dolor architecto. In alias ad nobis cumque quas sint omnis
-          debitis explicabo deleniti nam repellat dignissimos, cum eligendi
-          laboriosam distinctio doloribus deserunt sequi sunt fugit voluptate.
-          Laboriosam officiis quo commodi dignissimos, similique voluptatibus,
-          placeat cupiditate voluptatem odio nisi illum ut obcaecati eligendi
-          eveniet aliquid corrupti excepturi porro facere optio facilis vero
-          temporibus. Aliquid in fugiat rerum non iste blanditiis minus
-          quisquam! Quaerat tempora vel non, optio sint ipsum, atque eum
-          eligendi natus et at. Rerum quod magnam porro autem. Id repudiandae
-          odit optio, harum, distinctio praesentium autem fuga sed ipsum sunt
-          commodi molestias ex tenetur vel facere animi hic reiciendis
-          recusandae corrupti. Magnam quidem sunt debitis laborum placeat, sed
-          voluptatibus ullam deleniti nemo mollitia aliquid ipsam cupiditate
-          consequuntur aperiam numquam, eveniet animi sint? Possimus neque natus
-          est eaque sequi, dignissimos error numquam consectetur perferendis,
-          veritatis debitis quisquam ipsam. Reiciendis unde velit delectus quae,
-          culpa perferendis quas, est fugit nam error assumenda quos molestiae
-          vero necessitatibus autem explicabo cupiditate consequatur ad, optio
-          quod saepe. Facilis, dolores nisi. Voluptate maxime, alias ipsa
-          dolores maiores recusandae fuga amet eligendi consectetur quos
-          laboriosam quod iusto, inventore voluptatem similique ratione culpa
-          nemo! In quidem molestias esse? Animi repudiandae possimus id nisi
-          sequi laudantium quos quidem itaque, aut, placeat neque ipsam ut
-          ducimus sit illum, incidunt ab inventore eum commodi voluptatem
-          explicabo. Consequatur quas delectus libero, laudantium impedit
-          doloremque magnam labore id reiciendis ad dicta modi, magni hic,
-          officiis quidem. Illo animi doloremque eligendi. Dolor deleniti nemo
-          quod nostrum excepturi harum tenetur provident quibusdam nihil
-          repudiandae odio obcaecati iusto omnis voluptatibus ad ex ut alias
-          velit illum totam quae, adipisci atque, officia sunt? Adipisci, minus,
-          asperiores officiis ab quia numquam in quam reiciendis deleniti enim
-          odio libero consectetur omnis soluta ratione error rerum ea eveniet.
-          Quasi quos non consequatur nemo aperiam vero repellendus tempora aut
-          cupiditate consectetur porro quia quas, autem obcaecati. Minima,
-          necessitatibus. Accusantium numquam assumenda temporibus commodi
-          blanditiis ducimus velit dolor eum, magni dignissimos, quod ad nobis
-          aut vitae fuga! Dolorum enim libero tempora consequuntur commodi
-          molestiae minus perspiciatis cupiditate officiis pariatur sed
-          provident est deleniti ducimus itaque, necessitatibus qui alias iste
-          eveniet? Odit maxime amet assumenda sit adipisci dolorum vel eum eius
-          voluptas quasi debitis facilis, quis nam molestias ratione ducimus!
-          Cupiditate at rerum ipsa blanditiis dignissimos sint ratione iusto,
-          nam quos numquam vero laboriosam corporis repellendus optio nobis eius
-          consequuntur reiciendis voluptas nemo. Libero esse natus ipsum rem
-          repellat. Sed, voluptatum quod ipsa rerum cumque soluta delectus earum
-          error quidem ducimus eaque cum odio veritatis quia et maxime quis
-          voluptatibus nemo suscipit. Eligendi voluptas beatae iure fugit
-          consequatur soluta officia tempore nobis reprehenderit! Dolore error
-          aut voluptatibus vero aliquam nobis voluptatum saepe, iste quod non
-          neque eligendi quia quo repellat nesciunt amet necessitatibus beatae
-          dicta! Blanditiis in rem iure. Molestias delectus praesentium rerum?
-          Unde, ratione debitis sit quam ex, quia laborum reiciendis quas quo
-          explicabo, obcaecati quibusdam iusto enim accusantium incidunt minima
-          facere. Possimus delectus ea culpa neque ducimus porro ad cumque
-          debitis amet corrupti, consequuntur quo officia excepturi omnis sed
-          facere, soluta aliquam repudiandae rem eligendi quos? Vel aperiam
-          magni iusto expedita explicabo qui, quae mollitia inventore
-          dignissimos officia non quisquam quaerat minima? Sunt rem veniam
-          cupiditate, asperiores reiciendis tempore nesciunt ab enim impedit
-          laboriosam optio ut repudiandae, minus doloremque, numquam beatae odio
-          distinctio rerum. Hic dolorem recusandae amet et ipsam repellendus
-          consequuntur voluptatibus asperiores. Officia nulla rerum iste
-          perferendis nesciunt culpa aliquam dolorum maxime accusamus voluptatum
-          pariatur doloribus, deleniti, consequuntur sapiente animi tenetur
-          dolor! Ratione atque sapiente iusto consectetur fugit soluta culpa
-          asperiores esse quos adipisci, laboriosam quae facere placeat cumque
-          eligendi, voluptate maiores optio veniam suscipit dignissimos nemo
-          libero reiciendis! Vitae explicabo similique beatae quia impedit
-          suscipit optio officia laboriosam iste fugiat incidunt, quas et eaque
-          iure. Obcaecati qui id, saepe voluptas molestiae, odit praesentium
-          sunt eaque, quo facilis architecto ullam nam voluptate fugiat.
-          Possimus quia ratione eum sint veritatis, libero maxime. Provident
-          placeat beatae tempore eveniet accusantium illo explicabo dolore natus
-          repudiandae, ducimus quisquam architecto eos quam laborum quos
-          laboriosam maxime aliquid quae perferendis accusamus sit itaque. Ea,
-          cum iure est ducimus atque voluptates error ex ad corrupti nisi fuga,
-          omnis voluptate, vel recusandae culpa suscipit vitae iste! Aliquid,
-          dolores. Ipsam recusandae sunt id adipisci excepturi! Tempore totam
-          nesciunt, cumque quo modi quibusdam illo porro vero blanditiis
-          assumenda nobis exercitationem quos hic et amet harum id voluptatum.
-          Quaerat voluptate ipsam iure. Amet blanditiis minima doloremque est
-          officia rerum dolorum architecto commodi. Expedita corporis minima
-          ratione dolor nulla veritatis sunt maiores alias voluptate esse!
-          Deleniti laboriosam sapiente quaerat! Quo cum rerum veniam
-          perspiciatis suscipit neque, iusto consequatur! Quis quisquam earum
-          modi? Harum, non! A minima, temporibus pariatur maxime officiis beatae
-          vel ipsam cumque debitis tenetur. Ipsa quisquam minus incidunt maxime
-          obcaecati. Soluta, sunt eos. Minima sapiente eius veniam obcaecati
-          fugiat recusandae similique excepturi modi alias. Excepturi quod
-          expedita voluptas a laborum sed necessitatibus sunt quaerat.</span
-        >
+      <div class="mobile_menu_drawer">
+        <div class="mobile_nav_list_wrapper">
+          <ul class="nav_lists">
+            <div class="mobile_nav_link_content">
+              <a class="mobile_nav_link" href="#">
+                <div class="list_item_content">
+                  <li class="mobile_nav_list_item">Services</li>
+                  <span class="has_children_icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </div>
+              </a>
+              <div class="has_children_menu_content">
+                <ul class="has_menu_link_wrapper">
+                  <div class="has_menu_inner_content_wrapper">
+                    <a href="#">
+                      <div class="has_menu_link_content">
+                        <div class="inner_link_icon">
+                          <span><img style="width: 20px; height: 20px"
+                              src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
+                              alt="" /></span>
+                        </div>
+                        <div class="has_menu_link_item">
+                          <li>Google Marcent Center</li>
+                          <span>link sub text</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="has_menu_inner_content_wrapper">
+                    <a href="#">
+                      <div class="has_menu_link_content">
+                        <div class="inner_link_icon">
+                          <span><img style="width: 20px; height: 20px"
+                              src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
+                              alt="" /></span>
+                        </div>
+                        <div class="has_menu_link_item">
+                          <li>Google Marcent Center</li>
+                          <span>link sub text</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="has_menu_inner_content_wrapper">
+                    <a href="#">
+                      <div class="has_menu_link_content">
+                        <div class="inner_link_icon">
+                          <span><img style="width: 20px; height: 20px"
+                              src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
+                              alt="" /></span>
+                        </div>
+                        <div class="has_menu_link_item">
+                          <li>Google Marcent Center</li>
+                          <span>link sub text</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+            </div>
+            <div class="mobile_nav_link_content">
+              <a class="mobile_nav_link" href="#">
+                <div class="list_item_content">
+                  <li class="mobile_nav_list_item">Services</li>
+                  <span class="has_children_icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.67" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </div>
+              </a>
+              <div class="has_children_menu_content">
+                <ul class="has_menu_link_wrapper">
+                  <div class="has_menu_inner_content_wrapper">
+                    <a href="#">
+                      <div class="has_menu_link_content">
+                        <div class="inner_link_icon">
+                          <span><img style="width: 20px; height: 20px"
+                              src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
+                              alt="" /></span>
+                        </div>
+                        <div class="has_menu_link_item">
+                          <li>Google Marcent Center</li>
+                          <span>link sub text</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="has_menu_inner_content_wrapper">
+                    <a href="#">
+                      <div class="has_menu_link_content">
+                        <div class="inner_link_icon">
+                          <span><img style="width: 20px; height: 20px"
+                              src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
+                              alt="" /></span>
+                        </div>
+                        <div class="has_menu_link_item">
+                          <li>Google Marcent Center</li>
+                          <span>link sub text</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="has_menu_inner_content_wrapper">
+                    <a href="#">
+                      <div class="has_menu_link_content">
+                        <div class="inner_link_icon">
+                          <span><img style="width: 20px; height: 20px"
+                              src="https://cdn.prod.website-files.com/661ed184f9e5b98436adf9cb/6673fab8effd3da25e9a7f27_store.svg"
+                              alt="" /></span>
+                        </div>
+                        <div class="has_menu_link_item">
+                          <li>Google Marcent Center</li>
+                          <span>link sub text</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <a class="book_btn" href="">Book a call</a>
       </div>
-    </main>
-    <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        const header_section = document.querySelector(".header_section");
-        const links = header_section.querySelectorAll("a");
-        links.forEach((link) => {
-          if (!link.textContent.trim()) {
-            link.style.display = "none";
-          }
-        });
+    </div>
+  </header>
+  <main>
+    <div class="content">
+      <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum labore
+        quod dolore. Quis molestias natus nihil temporibus, error quasi ea
+        consectetur. Optio excepturi odit sequi veniam provident nisi ea
+        minima! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Accusantium fugit, provident saepe voluptas ex repellendus
+        voluptatibus doloribus ipsum quas quo aliquid dicta animi a
+        necessitatibus quis possimus inventore placeat id perferendis dolor
+        nesciunt quidem pariatur impedit eaque. Expedita, minus fugiat,
+        nesciunt id consequuntur vitae beatae autem fugit quos magnam sunt? Ad
+        officia necessitatibus velit autem hic! In, beatae laborum? Culpa
+        molestiae quisquam ducimus, a voluptatibus odio voluptas eos maiores
+        perspiciatis dolore incidunt earum ex omnis error, fuga assumenda
+        porro nisi quam consequatur impedit velit numquam. Excepturi quae
+        sequi, accusamus at quia reiciendis officiis animi harum non ut, sunt
+        ea fuga dolorem blanditiis error maxime? Natus asperiores corporis est
+        aliquam distinctio a recusandae quibusdam mollitia ea. Provident error
+        eveniet ad porro. Aliquam incidunt magnam numquam nisi omnis tenetur
+        fugit eius repellat nemo dolorum amet dolorem, eaque at reprehenderit
+        cumque minima ducimus ut dolores soluta doloremque dolor error hic
+        sunt doloribus. Ex qui reprehenderit illo, tempore at facere quaerat
+        placeat ducimus facilis ut dolore minus itaque optio harum quasi dicta
+        consequatur ea asperiores tempora eveniet similique aliquid. Corporis
+        ipsam odio nostrum, obcaecati facilis aperiam consequuntur dicta, quae
+        temporibus modi assumenda aliquam eligendi dolores excepturi nobis
+        ipsum dolor architecto. In alias ad nobis cumque quas sint omnis
+        debitis explicabo deleniti nam repellat dignissimos, cum eligendi
+        laboriosam distinctio doloribus deserunt sequi sunt fugit voluptate.
+        Laboriosam officiis quo commodi dignissimos, similique voluptatibus,
+        placeat cupiditate voluptatem odio nisi illum ut obcaecati eligendi
+        eveniet aliquid corrupti excepturi porro facere optio facilis vero
+        temporibus. Aliquid in fugiat rerum non iste blanditiis minus
+        quisquam! Quaerat tempora vel non, optio sint ipsum, atque eum
+        eligendi natus et at. Rerum quod magnam porro autem. Id repudiandae
+        odit optio, harum, distinctio praesentium autem fuga sed ipsum sunt
+        commodi molestias ex tenetur vel facere animi hic reiciendis
+        recusandae corrupti. Magnam quidem sunt debitis laborum placeat, sed
+        voluptatibus ullam deleniti nemo mollitia aliquid ipsam cupiditate
+        consequuntur aperiam numquam, eveniet animi sint? Possimus neque natus
+        est eaque sequi, dignissimos error numquam consectetur perferendis,
+        veritatis debitis quisquam ipsam. Reiciendis unde velit delectus quae,
+        culpa perferendis quas, est fugit nam error assumenda quos molestiae
+        vero necessitatibus autem explicabo cupiditate consequatur ad, optio
+        quod saepe. Facilis, dolores nisi. Voluptate maxime, alias ipsa
+        dolores maiores recusandae fuga amet eligendi consectetur quos
+        laboriosam quod iusto, inventore voluptatem similique ratione culpa
+        nemo! In quidem molestias esse? Animi repudiandae possimus id nisi
+        sequi laudantium quos quidem itaque, aut, placeat neque ipsam ut
+        ducimus sit illum, incidunt ab inventore eum commodi voluptatem
+        explicabo. Consequatur quas delectus libero, laudantium impedit
+        doloremque magnam labore id reiciendis ad dicta modi, magni hic,
+        officiis quidem. Illo animi doloremque eligendi. Dolor deleniti nemo
+        quod nostrum excepturi harum tenetur provident quibusdam nihil
+        repudiandae odio obcaecati iusto omnis voluptatibus ad ex ut alias
+        velit illum totam quae, adipisci atque, officia sunt? Adipisci, minus,
+        asperiores officiis ab quia numquam in quam reiciendis deleniti enim
+        odio libero consectetur omnis soluta ratione error rerum ea eveniet.
+        Quasi quos non consequatur nemo aperiam vero repellendus tempora aut
+        cupiditate consectetur porro quia quas, autem obcaecati. Minima,
+        necessitatibus. Accusantium numquam assumenda temporibus commodi
+        blanditiis ducimus velit dolor eum, magni dignissimos, quod ad nobis
+        aut vitae fuga! Dolorum enim libero tempora consequuntur commodi
+        molestiae minus perspiciatis cupiditate officiis pariatur sed
+        provident est deleniti ducimus itaque, necessitatibus qui alias iste
+        eveniet? Odit maxime amet assumenda sit adipisci dolorum vel eum eius
+        voluptas quasi debitis facilis, quis nam molestias ratione ducimus!
+        Cupiditate at rerum ipsa blanditiis dignissimos sint ratione iusto,
+        nam quos numquam vero laboriosam corporis repellendus optio nobis eius
+        consequuntur reiciendis voluptas nemo. Libero esse natus ipsum rem
+        repellat. Sed, voluptatum quod ipsa rerum cumque soluta delectus earum
+        error quidem ducimus eaque cum odio veritatis quia et maxime quis
+        voluptatibus nemo suscipit. Eligendi voluptas beatae iure fugit
+        consequatur soluta officia tempore nobis reprehenderit! Dolore error
+        aut voluptatibus vero aliquam nobis voluptatum saepe, iste quod non
+        neque eligendi quia quo repellat nesciunt amet necessitatibus beatae
+        dicta! Blanditiis in rem iure. Molestias delectus praesentium rerum?
+        Unde, ratione debitis sit quam ex, quia laborum reiciendis quas quo
+        explicabo, obcaecati quibusdam iusto enim accusantium incidunt minima
+        facere. Possimus delectus ea culpa neque ducimus porro ad cumque
+        debitis amet corrupti, consequuntur quo officia excepturi omnis sed
+        facere, soluta aliquam repudiandae rem eligendi quos? Vel aperiam
+        magni iusto expedita explicabo qui, quae mollitia inventore
+        dignissimos officia non quisquam quaerat minima? Sunt rem veniam
+        cupiditate, asperiores reiciendis tempore nesciunt ab enim impedit
+        laboriosam optio ut repudiandae, minus doloremque, numquam beatae odio
+        distinctio rerum. Hic dolorem recusandae amet et ipsam repellendus
+        consequuntur voluptatibus asperiores. Officia nulla rerum iste
+        perferendis nesciunt culpa aliquam dolorum maxime accusamus voluptatum
+        pariatur doloribus, deleniti, consequuntur sapiente animi tenetur
+        dolor! Ratione atque sapiente iusto consectetur fugit soluta culpa
+        asperiores esse quos adipisci, laboriosam quae facere placeat cumque
+        eligendi, voluptate maiores optio veniam suscipit dignissimos nemo
+        libero reiciendis! Vitae explicabo similique beatae quia impedit
+        suscipit optio officia laboriosam iste fugiat incidunt, quas et eaque
+        iure. Obcaecati qui id, saepe voluptas molestiae, odit praesentium
+        sunt eaque, quo facilis architecto ullam nam voluptate fugiat.
+        Possimus quia ratione eum sint veritatis, libero maxime. Provident
+        placeat beatae tempore eveniet accusantium illo explicabo dolore natus
+        repudiandae, ducimus quisquam architecto eos quam laborum quos
+        laboriosam maxime aliquid quae perferendis accusamus sit itaque. Ea,
+        cum iure est ducimus atque voluptates error ex ad corrupti nisi fuga,
+        omnis voluptate, vel recusandae culpa suscipit vitae iste! Aliquid,
+        dolores. Ipsam recusandae sunt id adipisci excepturi! Tempore totam
+        nesciunt, cumque quo modi quibusdam illo porro vero blanditiis
+        assumenda nobis exercitationem quos hic et amet harum id voluptatum.
+        Quaerat voluptate ipsam iure. Amet blanditiis minima doloremque est
+        officia rerum dolorum architecto commodi. Expedita corporis minima
+        ratione dolor nulla veritatis sunt maiores alias voluptate esse!
+        Deleniti laboriosam sapiente quaerat! Quo cum rerum veniam
+        perspiciatis suscipit neque, iusto consequatur! Quis quisquam earum
+        modi? Harum, non! A minima, temporibus pariatur maxime officiis beatae
+        vel ipsam cumque debitis tenetur. Ipsa quisquam minus incidunt maxime
+        obcaecati. Soluta, sunt eos. Minima sapiente eius veniam obcaecati
+        fugiat recusandae similique excepturi modi alias. Excepturi quod
+        expedita voluptas a laborum sed necessitatibus sunt quaerat.</span>
+    </div>
+  </main>
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const header_section = document.querySelector(".header_section");
+      const links = header_section.querySelectorAll("a");
+      links.forEach((link) => {
+        if (!link.textContent.trim()) {
+          link.style.display = "none";
+        }
+      });
 
-        // hamburger
-        const menu_hamburger = document.getElementById("menu_hamburger");
-        const mobile_menu_drawer = document.querySelector(
-          ".mobile_menu_drawer"
-        );
-        menu_hamburger.addEventListener("click", function () {
-          mobile_menu_drawer.classList.toggle("open_mobile_menu_drawer");
-        });
+      // hamburger
+      const menu_hamburger = document.getElementById("menu_hamburger");
+      const mobile_menu_drawer = document.querySelector(
+        ".mobile_menu_drawer"
+      );
+      menu_hamburger.addEventListener("click", function () {
+        mobile_menu_drawer.classList.toggle("open_mobile_menu_drawer");
+      });
 
-        // mobile sub menu open
-        const mobile_nav_link_content = document.querySelectorAll(
-          ".mobile_nav_link_content"
-        );
-        mobile_nav_link_content.forEach((btn) => {
-          btn.addEventListener("click", function () {
-            let inner_content = btn.querySelector(".has_children_menu_content");
-            inner_content.classList.toggle("open_has_children_content");
+      // mobile sub menu open
+      const mobile_nav_link_content = document.querySelectorAll(
+        ".mobile_nav_link_content"
+      );
+      mobile_nav_link_content.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          let inner_content = btn.querySelector(".has_children_menu_content");
+          inner_content.classList.toggle("open_has_children_content");
 
-            // Rotate the icon
-            const icon = btn.querySelector(".has_children_icon svg");
-            icon.classList.toggle("rotate");
-          });
+          // Rotate the icon
+          const icon = btn.querySelector(".has_children_icon svg");
+          icon.classList.toggle("rotate");
         });
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
